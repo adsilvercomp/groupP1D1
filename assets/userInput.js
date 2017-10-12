@@ -1,11 +1,7 @@
 $(document).ready(function() {
 
     //global variables
-    var qAmount = $("#trivia_amount").val();
-    var uCategory = $("#trivia_category").val();
-    var uLevel = $('#trivia_difficulty').val();
     var URL = "https://opentdb.com/api.php?";
-
     //clear previous local storage game data.
     localStorage.removeItem("amount");
     localStorage.removeItem("category");
@@ -13,17 +9,18 @@ $(document).ready(function() {
 
     var responseData;
     $("#btnSubmit").on("click", function(event) {
-        event.preventDefault();
+            event.preventDefault();
 
-       if (qAmount==10 ) {
-            $('#myModal').modal('show');
+            // if (qAmount==10 ) {
+            //    $('#myModal').modal('show');
             // Focus the email rather than mypassword (which doesn't exist)
-        } else {
+            //      } else {
 
 
-            //var qAmount = $("#trivia_amount").val();
-            //var uCategory = $("#trivia_category").val();
-            //var uLevel = $('#trivia_difficulty').val();
+
+            var qAmount = $("#trivia_amount").val();
+            var uCategory = $("#trivia_category").val();
+            var uLevel = $('#trivia_difficulty').val();
 
             //set the game Parameter data to local storage
             localStorage.setItem("amount", qAmount);
@@ -33,7 +30,7 @@ $(document).ready(function() {
             //turns the submit button into a link for the game page.
             location.href = "game.html";
 
-        }
+        //}
 
 
     });
